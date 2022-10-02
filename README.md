@@ -58,6 +58,7 @@ dash-app-structure
 |   |-- app.py
 ```
 
+(virtual-environment)=
 ### Virtual Environment
 
 The first few items in our structure refer to the virtaul environment and package manager.
@@ -171,3 +172,28 @@ This is where we define the Dash app, set external stylesheets, and run the app.
 
 As it stands, Dash requires the `app` object for defining `long_callbacks`.
 Since this is the only place in the codebase that can access the app object, without ciruclar imports, this file should house any `long_callbacks`.
+
+#### Starting the App on Windows
+
+* Assume the the app's folder is `dash-app-structure-Trainer-Hill/`
+* The app's environment should be created in  `dash-app-structure-Trainer-Hill/.VENV`,<br>rf. [Virtual Environment](virtual-environment)
+
+Then Start the app by
+```shell
+cd dash-app-structure-Trainer-Hill
+.VENV\Scripts\activate
+set PORT=8085
+cd src
+python app.py
+```
+
+* Assume the app's environment was **incorrectly** created in the folder<br> `env-dash-app-structure-Trainer-Hill/`
+* Assume further it is contained in the same folder as the app's folder (same as above)
+
+Then Start the app by
+```shell
+env-dash-app-structure-Trainer-Hill\Scripts\activate
+set PORT=8085
+cd dash-app-structure-Trainer-Hill\src
+python app.py
+```
